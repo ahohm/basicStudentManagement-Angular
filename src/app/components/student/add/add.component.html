@@ -1,0 +1,28 @@
+
+<div class="container col-6" *ngIf="studentAddForm">
+	<form class="form-group" [formGroup]="studentAddForm" (ngSubmit)="doRegister()">
+	<div >
+		<h3><span *ngIf="index == undefined">Student Registration</span><span *ngIf="index != undefined">Student Update</span> <a routerLink="/" class="btn btn-dark"> Back</a></h3>
+	</div>
+
+		<label ><b>First Name</b></label>
+		<input class="form-control" type="text" formControlName="first_name">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.first_name.invalid && (studentAddForm.controls.first_name.dirty || studentAddForm.controls.first_name.touched)">Please enter 3 to 50 characters</div> 
+
+		<label ><b>Last Name</b></label>
+		<input class="form-control" type="text" formControlName="last_name">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.last_name.invalid && (studentAddForm.controls.last_name.dirty || studentAddForm.controls.last_name.touched)">Please enter  3 to 50 characters </div> 
+
+		<label ><b>Email Address</b></label>
+		<input class="form-control" type="text" formControlName="email">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.email.invalid && (studentAddForm.controls.email.dirty || studentAddForm.controls.email.touched)">Please enter valid email address</div> 
+
+		<label ><b>Phone</b></label>
+		<input class="form-control" type="number" formControlName="phone">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.phone.invalid && (studentAddForm.controls.phone.dirty || studentAddForm.controls.phone.touched)">Please enter valid phone number</div> 
+		<br>
+		<button class="btn btn-primary" type="submit" [disabled]="!studentAddForm.valid"><span *ngIf="index == undefined">Register</span><span *ngIf="index != undefined">Update</span> <i class="w3-medium fa fa-check"></i> </button>
+
+	</form>
+</div>
+

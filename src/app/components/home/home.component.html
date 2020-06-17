@@ -1,0 +1,17 @@
+
+<nav class="card" style="z-index:3;width:250px;">
+	
+	<ul>
+		<li><a routerLink="/">  User List</a></li>
+		<li><a routerLink="/add">  Add new user</a></li>
+		<li><a (click)="logOut()">  Logout</a></li>
+	</ul>
+</nav>
+
+<div class="card" style="margin-left:250px;">
+	<div class="container">
+	<!--  Child Routing -->
+		<router-outlet></router-outlet>
+	</div>
+</div>
+

@@ -1,0 +1,31 @@
+<div class="align-center text-center centro">
+<div class="col-4 align-center">
+	<div class="card">
+		<form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+			<div class="text-center card-header">
+				<h2>Login</h2>
+			</div>
+	
+			<div>
+				<div><label><b>Email</b></label></div>
+				<input class="form-control" type="email" formControlName="email">
+				<div   *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">Please enter valid email address</div> 
+			</div>
+
+			<div>
+				<div><label ><b>Password</b></label></div>
+				<input class="form-control" type="password" formControlName="password">
+				<div  *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">Password must be at least 6 characters long, and contain a number</div> 
+			</div>
+
+			<br>
+			<div>
+				<button class="btn btn-success" type="submit" [disabled]="!loginForm.valid">Login <i class="w3-medium fa fa-check"></i> </button>
+			</div>
+		</form>
+		<div >
+			<p>  Credentials : admin@admin.com &amp; 123456</p>
+		</div> 
+	</div>
+</div>
+</div>
