@@ -20,13 +20,13 @@ export class HomeComponent implements OnInit {
 
   active:string;
  	constructor(private router: Router) {
- 		
+
  	}
 
  	ngOnInit() {
  	}
 
- 	
+
  	logOut(){
  		localStorage.removeItem('userData');
  		this.router.navigate(['/login']);
@@ -35,21 +35,3 @@ export class HomeComponent implements OnInit {
 }
 
 
-export const homeChildRoutes : Routes = [
-	{
-		path: '',
-		component: ListComponent
-	},
-	{
-		path: 'add',
-		component: AddComponent
-	},
-	{
-		path: 'update/:id',
-		component: AddComponent
-	},
-	{
-		path: 'detail/:id',
-		component: DetailsComponent
-	}
-	];

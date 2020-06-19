@@ -10,9 +10,9 @@ export class AppComponent {
 
 	// Add few students for initial listing
 	studentsList = [
-	{	
+	{
 		id : 1,
-		first_name : "Abdo RAhim",
+		first_name : "Abdou Rahime",
 		last_name : "Daouda",
 		email : "abdorahim@daouda.com",
 		phone : 95037331,
